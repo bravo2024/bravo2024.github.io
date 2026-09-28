@@ -78,7 +78,7 @@
 <main>
 
 <h1>Vivek Repository</h1>
-<p class="sites"><a href="https://vivekbose.com/portfolio">vivekbose.com/portfolio</a><a href="https://vivekailab.com">vivekailab.com</a></p>
+<p class="sites"><a href="https://github.com/bravo2024">github.com/bravo2024</a><a href="https://vivekbose.com/portfolio">vivekbose.com/portfolio</a><a href="https://vivekailab.com">vivekailab.com</a></p>
 <p class="lead">LLM agents and RAG, deep learning, credit risk, fraud detection, recommender systems and forecasting.</p>
 
 <div class="card">
@@ -86,7 +86,7 @@
   <ul>
     <li>RAG over the full Income-Tax Act, 2025: 477 sections, 1,237 passages, answers cited by section, plus on-the-fly indexing of uploaded PDFs.</li>
     <li>Three fine-tuned sentence-transformer retrievers (tax, finance, Hinglish): Recall@5 0.96, MRR@5 0.85 on a 100-query hard set.</li>
-    <li>Answers written by DeepSeek-V4-Flash, Llama-3.3-70B, Step-3.7-Flash and MiMo-V2.5 through OpenCode, Groq, NVIDIA NIM and Kilo with automatic failover; an abstention gate refuses 11 of 12 out-of-scope questions.</li>
+    <li>LLM answers served through automatic failover across Groq, NVIDIA and Kilo endpoints; an abstention gate refuses 11 of 12 out-of-scope questions.</li>
   </ul>
   <div class="meta">
     <span class="stack">RAG · LLMs · Embedding Fine-tuning · Dense Retrieval · LLM Orchestration</span>
@@ -238,9 +238,9 @@
 <div class="card">
   <h3>Agentic market intelligence engine</h3>
   <ul>
-    <li>ReAct agent with function calling across 14 tools (fundamentals, indicators, backtesting, RAG news, sandboxed Python) on any Yahoo Finance ticker.</li>
-    <li>22-task agentic benchmark: 91% task success, 91% tool-call accuracy, 96% numeric grounding.</li>
-    <li>Runs on GPT-OSS-120B, Nemotron-3-Ultra-550B, Nemotron-3-Super-120B and Step-3.7-Flash via Groq, NVIDIA NIM and Kilo with failover; cost-aware out-of-sample backtests and GARCH volatility bands.</li>
+    <li>ReAct agent with function calling across 14 tools (indicators, backtesting, intraday GARCH ranges, RAG news, sandboxed Python) on any Yahoo Finance asset: stocks, indices, crypto and commodities.</li>
+    <li>22-task benchmark (4 held out) over 3 repeated runs: 86% of tasks passed every run (pass^3), required tools called in 97% of checks, 97% of numbers grounded in tool output.</li>
+    <li>User-selectable frontier LLMs (Gemini 3.8 Flash, DeepSeek-V4.1, Kimi-K3, GPT-OSS-120B, Nemotron-3-Ultra-550B) with automatic failover across NVIDIA, Groq and Gemini endpoints.</li>
   </ul>
   <div class="meta">
     <span class="stack">Agentic AI · LLM Agents · LLMs · Function Calling · RAG · Backtesting</span>
