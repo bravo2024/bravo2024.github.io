@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vivek Repository</title>
+<meta name="description" content="Machine learning, LLM agents, RAG, deep learning, credit risk, fraud detection, recommender systems and forecasting projects with code and live demos.">
+<style>
+  :root {
+    --bg: #fbfbf9;
+    --fg: #1d1d1b;
+    --muted: #5f5f5a;
+    --line: #e2e2dc;
+    --card: #ffffff;
+    --link: #1f5fbf;
+    --tag: #f0f0ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141413;
+      --fg: #ecece6;
+      --muted: #a3a39c;
+      --line: #2e2e2b;
+      --card: #1b1b1a;
+      --link: #7fb0ff;
+      --tag: #242422;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  main { max-width: 880px; margin: 0 auto; padding: 56px 20px 72px; }
+  h1 { font-size: 2rem; margin: 0 0 8px; letter-spacing: -0.01em; }
+  .sites { margin: 0 0 12px; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .lead { color: var(--muted); margin: 0 0 36px; }
+  h2 { font-size: 1.15rem; margin: 48px 0 12px; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-bottom: 14px;
+  }
+  .card h3 { margin: 0 0 6px; font-size: 1.05rem; line-height: 1.4; }
+  .card ul { margin: 0 0 10px; padding-left: 20px; }
+  .card li { margin-bottom: 4px; }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 14px;
+    font-size: 0.875rem;
+  }
+  .stack { color: var(--muted); background: var(--tag); padding: 2px 8px; border-radius: 4px; }
+
+  .list { list-style: none; margin: 0; padding: 0; }
+  .list li {
+    padding: 10px 0;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 12px;
+  }
+  .list li:last-child { border-bottom: 1px solid var(--line); }
+  .list .name { font-weight: 600; }
+  .list .d { flex: 1 1 320px; }
+  .list .links { font-size: 0.875rem; display: flex; gap: 12px; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Vivek Repository</h1>
+<p class="sites"><a href="https://vivekbose.com/portfolio">vivekbose.com/portfolio</a><a href="https://vivekailab.com">vivekailab.com</a></p>
+<p class="lead">LLM agents and RAG, deep learning, credit risk, fraud detection, recommender systems and forecasting.</p>
+
+<div class="card">
+  <h3>TaxRAG: Indian Income Tax Q&amp;A assistant</h3>
+  <ul>
+    <li>RAG over the full Income-Tax Act, 2025: 477 sections, 1,237 passages, answers cited by section, plus on-the-fly indexing of uploaded PDFs.</li>
+    <li>Three fine-tuned sentence-transformer retrievers (tax, finance, Hinglish): Recall@5 0.96, MRR@5 0.85 on a 100-query hard set.</li>
+    <li>Answers written by DeepSeek-V4-Flash, Llama-3.3-70B, Step-3.7-Flash and MiMo-V2.5 through OpenCode, Groq, NVIDIA NIM and Kilo with automatic failover; an abstention gate refuses 11 of 12 out-of-scope questions.</li>
+  </ul>
+  <div class="meta">
+    <span class="stack">RAG · LLMs · Embedding Fine-tuning · Dense Retrieval · LLM Orchestration</span>
+    <a href="https://github.com/bravo2024/TaxRag">Code</a>
+    <a href="https://indiataxrag.streamlit.app">Demo</a>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Customer churn prediction and retention budget optimization</h3>
+  <ul>
+    <li>1.76M e-commerce purchase records aggregated to 5,013 customers × 24 features, with temporal train/test cutoffs.</li>
+    <li>Voting ensemble: ROC-AUC 0.898, top-decile precision 0.487, AUC 0.87–0.89 across 30–180-day churn windows; SHAP drivers.</li>
+    <li>Retention budget allocated as a 0/1-knapsack MILP in HiGHS, plus survival analysis of time-to-return and A/B test power design.</li>
+  </ul>
+  <div class="meta">
+    <span class="stack">scikit-learn · XGBoost · SHAP · Mixed-Integer Programming · Survival Analysis</span>
+    <a href="https://github.com/bravo2024/churn_predict">Code</a>
+    <a href="https://churnpredopt.streamlit.app">Demo</a>
+  </div>
+</div>
+
+<div class="card">
+  <h3>QuantRisk: portfolio risk analytics dashboard</h3>
+  <ul>
+    <li>Live NSE, US and global portfolios via yfinance, with benchmark alpha, tracking error and information ratio.</li>
+    <li>95% / 99% VaR and Expected Shortfall by historical, parametric and Monte Carlo methods; drawdown and per-asset risk contribution.</li>
+    <li>Fama-French 5-factor regression and an efficient frontier of max-Sharpe, minimum-volatility and risk-parity portfolios.</li>
+  </ul>
+  <div class="meta">
+    <span class="stack">VaR / CVaR · Portfolio Optimization · Factor Models · Monte Carlo</span>
+    <a href="https://github.com/bravo2024/QuantRisk">Code</a>
+    <a href="https://quantrisk.streamlit.app">Demo</a>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Credit default prediction: AmEx, 11-model benchmark</h3>
+  <ul>
+    <li>458,913 customers with up to 13 monthly statements × 188 features; leakage-free customer-level split.</li>
+    <li>11 models including 1D-CNN, LSTM, GRU, CNN-LSTM, Transformer and XGBoost: ROC-AUC 0.960, PR-AUC 0.894, confirmed with 1,000 paired bootstrap resamples.</li>
+    <li>GRU-embedding + XGBoost hybrid, and K-Means risk tiers with default rates from 2.6% to 93.2%.</li>
+  </ul>
+  <div class="meta">
+    <span class="stack">Credit Risk · PyTorch · Sequence Models · XGBoost · Bootstrap Testing</span>
+    <a href="https://github.com/bravo2024/AmexDefault">Code</a>
+    <a href="https://huggingface.co/spaces/vivekkopthsd/amex-default-demo">Demo</a>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Movie recommender: MovieLens-1M</h3>
+  <ul>
+    <li>1,000,209 ratings from 6,040 users on 3,706 movies.</li>
+    <li>Item-item CF, SVD matrix factorization and Neural CF (two-tower PyTorch), evaluated by temporal leave-one-out with 100 negatives.</li>
+    <li>Best model (SVD): NDCG@10 0.357, Recall@10 0.569, RMSE 1.150.</li>
+  </ul>
+  <div class="meta">
+    <span class="stack">Recommender Systems · Collaborative Filtering · Neural CF · Ranking Metrics</span>
+    <a href="https://github.com/bravo2024/MovieRec">Code</a>
+    <a href="https://moviersuggest.streamlit.app">Demo</a>
+  </div>
+</div>
+
+<div class="card">
+  <h3>TxCat: transaction categorization and anomaly detection</h3>
+  <ul>
+    <li>200,000 real bank transaction descriptions sorted into 10 spending categories.</li>
+    <li>TF-IDF with Logistic Regression and XGBoost: 97.5% accuracy, unchanged on a split with zero merchant overlap (53,160 merchants).</li>
+    <li>Isolation Forest flags unusual transactions on the same feature space.</li>
+  </ul>
+  <div class="meta">
+    <span class="stack">NLP · Text Classification · TF-IDF · Anomaly Detection</span>
+    <a href="https://github.com/bravo2024/TxCat">Code</a>
+    <a href="https://transactioncat.streamlit.app">Demo</a>
+  </div>
+</div>
+
+<div class="card">
+  <h3>MRSS: mortgage risk segmentation and survival analysis</h3>
+  <ul>
+    <li>62,359 FHFA mortgages (2013–2024) on 17 origination features, segmented with PCA and K-Means and cross-checked by Ward clustering.</li>
+    <li>Recovers a prime tier (FICO 773, LTV 56%) and a higher-risk tier (FICO 734, LTV 84%).</li>
+    <li>Kaplan-Meier, log-rank and Cox PH on 90-day delinquency: C-index 0.858, and 0.902 on 2021–2024 out-of-time loans.</li>
+  </ul>
+  <div class="meta">
+    <span class="stack">Credit Risk · Survival Analysis · Cox PH · PCA · Clustering</span>
+    <a href="https://github.com/bravo2024/MRSS">Code</a>
+    <a href="https://mortgagerisk.streamlit.app">Demo</a>
+  </div>
+</div>
+
+<div class="card">
+  <h3>BookRec: Goodbooks-10k recommender and search</h3>
+  <ul>
+    <li>10,000 books, 5.98M ratings, 53,424 readers.</li>
+    <li>Five methods: semantic content search, sparse SVD, item-item CF, Neural CF and a hybrid, with cold-start handling.</li>
+    <li>Best model (item-item cosine CF): NDCG@10 0.37, Recall@10 0.56, RMSE 0.91.</li>
+  </ul>
+  <div class="meta">
+    <span class="stack">Recommender Systems · Semantic Search · Sentence-Transformers · PyTorch</span>
+    <a href="https://github.com/bravo2024/BookRec">Code</a>
+    <a href="https://bookreco.streamlit.app">Demo</a>
+  </div>
+</div>
+
+<div class="card">
+  <h3>VisualProduct: visual similarity search and image classification</h3>
+  <ul>
+    <li>66K+ images across UT-Zappos50K, Oxford-IIIT Pets and Caltech-101.</li>
+    <li>MobileNetV2 transfer-learning embeddings (1,280-d) classified at 92–94% accuracy.</li>
+    <li>Cosine-similarity image search: top-1 precision 0.88–0.93, about 45 ms per query on CPU.</li>
+  </ul>
+  <div class="meta">
+    <span class="stack">Computer Vision · Transfer Learning · Image Retrieval · PyTorch</span>
+    <a href="https://github.com/bravo2024/VisualProduct">Code</a>
+    <a href="https://visualpsearch.streamlit.app">Demo</a>
+  </div>
+</div>
+
+<div class="card">
+  <h3>IEEE-CIS fraud detection and anomaly risk monitor</h3>
+  <ul>
+    <li>590,540 transactions (3.5% fraud) on an out-of-time split, with 137 engineered entity-history and PCA features.</li>
+    <li>XGBoost: PR-AUC 0.477, ROC-AUC 0.881, Precision@1% 0.874; isotonic calibration cuts the Brier score by 33%.</li>
+    <li>Graph fraud-ring features lift PR-AUC to 0.566; Isolation Forest anomaly layer stable under refits (Jaccard 0.64).</li>
+  </ul>
+  <div class="meta">
+    <span class="stack">Fraud Detection · Gradient Boosting · Graph Features · Calibration</span>
+    <a href="https://github.com/bravo2024/IEEECIS">Code</a>
+    <a href="https://ieeecis.streamlit.app">Demo</a>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Human activity recognition from smartphone sensors</h3>
+  <ul>
+    <li>Raw 9-channel × 128-timestep sensor windows from UCI HAR (30 subjects, 10,299 windows).</li>
+    <li>1D-CNN, bidirectional LSTM and bidirectional GRU trained end to end on raw signals, with no hand-crafted features.</li>
+    <li>1D-CNN reaches 94.3% accuracy and macro-F1 0.944 on the subject-independent split.</li>
+  </ul>
+  <div class="meta">
+    <span class="stack">Deep Learning · Time-Series Classification · 1D-CNN · LSTM / GRU</span>
+    <a href="https://github.com/bravo2024/HAR">Code</a>
+    <a href="https://harcnn.streamlit.app">Demo</a>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Agentic market intelligence engine</h3>
+  <ul>
+    <li>ReAct agent with function calling across 14 tools (fundamentals, indicators, backtesting, RAG news, sandboxed Python) on any Yahoo Finance ticker.</li>
+    <li>22-task agentic benchmark: 91% task success, 91% tool-call accuracy, 96% numeric grounding.</li>
+    <li>Runs on GPT-OSS-120B, Nemotron-3-Ultra-550B, Nemotron-3-Super-120B and Step-3.7-Flash via Groq, NVIDIA NIM and Kilo with failover; cost-aware out-of-sample backtests and GARCH volatility bands.</li>
+  </ul>
+  <div class="meta">
+    <span class="stack">Agentic AI · LLM Agents · LLMs · Function Calling · RAG · Backtesting</span>
+    <a href="https://github.com/bravo2024/agenticresearch">Code</a>
+    <a href="https://agenticresearch.streamlit.app">Demo</a>
+  </div>
+</div>
+
+
+<div class="card">
+  <h3>FraudGuard: credit card fraud detection under extreme imbalance</h3>
+  <ul>
+    <li>ULB dataset: 284,807 transactions, 0.17% fraud.</li>
+    <li>LightGBM: ROC-AUC 0.979, PR-AUC 0.845 on 71,201 held-out transactions.</li>
+    <li>Cost-matrix threshold tuning, calibration and a chronological split option.</li>
+  </ul>
+  <div class="meta">
+    <span class="stack">Fraud Detection · Class Imbalance · LightGBM · Cost-Sensitive Learning</span>
+    <a href="https://github.com/bravo2024/FraudGuard">Code</a>
+  </div>
+</div>
+
+<div class="card">
+  <h3>PcamVLM: histopathology vision-language model</h3>
+  <ul>
+    <li>QLoRA fine-tune of MedGemma 1.5 4B (4-bit NF4, LoRA r=16) with TRL SFTTrainer.</li>
+    <li>PatchCamelyon: accuracy 0.908, sensitivity 0.872, specificity 0.943; 9-class NCT-CRC: accuracy 0.876.</li>
+    <li>Adapter published on Hugging Face with a Streamlit demo.</li>
+  </ul>
+  <div class="meta">
+    <span class="stack">Vision-Language Models · QLoRA / PEFT · Medical Imaging</span>
+    <a href="https://github.com/bravo2024/PcamVLM">Code</a>
+    <a href="https://huggingface.co/vivekkopthsd/pcamvlm-medgemma-lora">Model</a>
+  </div>
+</div>
+
+
+<h2>Other repositories</h2>
+<ul class="list">
+  <li><span class="name">DemandForecast</span><span class="d">Retail demand forecasting with ARIMA, SARIMA and GARCH under walk-forward validation.</span><span class="links"><a href="https://github.com/bravo2024/DemandForecast">Code</a><a href="https://demandforecastm.streamlit.app">Demo</a></span></li>
+  <li><span class="name">Transactions</span><span class="d">Bank transaction categorization study with BM25 and NBSVM sparse linear models.</span><span class="links"><a href="https://github.com/bravo2024/Transactions">Code</a><a href="https://transactionscat.streamlit.app">Demo</a></span></li>
+  <li><span class="name">RAGCopilot</span><span class="d">RAG demo with TF-IDF and dense retrieval, faithfulness checking and 11 NVIDIA NIM models.</span><span class="links"><a href="https://github.com/bravo2024/RAGCopilot">Code</a><a href="https://ragcopilot.streamlit.app">Demo</a></span></li>
+  <li><span class="name">rageval</span><span class="d">RAG evaluation harness for extractive, closed-book LLM and retrieval-augmented answering.</span><span class="links"><a href="https://github.com/bravo2024/rageval">Code</a></span></li>
+  <li><span class="name">TrendScope</span><span class="d">Topic modeling and sentiment analysis on 20 Newsgroups with an NLP stack written from scratch.</span><span class="links"><a href="https://github.com/bravo2024/TrendScope">Code</a></span></li>
+  <li><span class="name">churniq</span><span class="d">Telco churn prediction with every model written from scratch in NumPy.</span><span class="links"><a href="https://github.com/bravo2024/churniq">Code</a></span></li>
+  <li><span class="name">CreditScope</span><span class="d">Credit limit assignment from estimated default risk with P&amp;L pricing on the Taiwan credit card dataset.</span><span class="links"><a href="https://github.com/bravo2024/CreditScope">Code</a></span></li>
+  <li><span class="name">AssetAllocator</span><span class="d">Modern Portfolio Theory dashboard with efficient frontier, risk analytics and Monte Carlo simulation.</span><span class="links"><a href="https://github.com/bravo2024/AssetAllocator">Code</a></span></li>
+  <li><span class="name">FlightDelay</span><span class="d">Flight delay prediction with temporal feature engineering and gradient boosting.</span><span class="links"><a href="https://github.com/bravo2024/FlightDelay">Code</a><a href="https://aiflightdelay.streamlit.app">Demo</a></span></li>
+  <li><span class="name">PrinterHealth</span><span class="d">Predictive maintenance and failure forecasting for printers with time-series Ridge regression.</span><span class="links"><a href="https://github.com/bravo2024/PrinterHealth">Code</a><a href="https://printerhealth.streamlit.app">Demo</a></span></li>
+  <li><span class="name">SteelDefect</span><span class="d">Steel surface defect detection with CNN transfer learning and Grad-CAM on the NEU dataset.</span><span class="links"><a href="https://github.com/bravo2024/SteelDefect">Code</a></span></li>
+  <li><span class="name">EdgeVision</span><span class="d">ResNet18, MobileNetV2 and ShuffleNetV2 benchmarked for edge deployment with INT8 quantization and ONNX export.</span><span class="links"><a href="https://github.com/bravo2024/EdgeVision">Code</a></span></li>
+  <li><span class="name">PathSeg</span><span class="d">Binary segmentation of H&amp;E tissue tiles with a Keras fully convolutional network.</span><span class="links"><a href="https://github.com/bravo2024/PathSeg">Code</a><a href="https://pathseg.streamlit.app">Demo</a></span></li>
+</ul>
+
+</main>
+</body>
+</html>
